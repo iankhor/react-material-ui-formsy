@@ -2,6 +2,13 @@ import React, { Component } from 'react'
 import App from './App'
 import { Link } from 'react-router'
 import JSONDebugger from '../utils/JSONDebugger'
+import Formsy from 'formsy-react'
+
+import { MenuItem,
+         FormsySelect,
+         FormsyDate
+       } from 'formsy-material-ui'
+
 
 // example JSON data
 const exampleJSONData = {
@@ -27,6 +34,22 @@ class ReferralForm extends Component {
                             fullWidth={true}
                         />
                     </p>
+
+                    <Formsy.Form>
+                        <FormsyDate
+                          name="date"
+                          required
+                          floatingLabelText="Departure date"
+                        />
+
+                        <FormsyDate
+                          name="date"
+                          required
+                          floatingLabelText="Arrival date"
+                        />
+                    </Formsy.Form>
+
+
                     <p>Below is an example of the JSON debugger</p>
                     <JSONDebugger json={exampleJSONData} />
                 
