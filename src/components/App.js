@@ -3,6 +3,8 @@ import logo from '../../assets/img/logo.svg'
 import '../css/style.css'
 import { Link } from 'react-router'
 
+//import your own components here
+
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 //material-ui components
