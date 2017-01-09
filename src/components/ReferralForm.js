@@ -5,8 +5,10 @@ import JSONDebugger from '../utils/JSONDebugger'
 import Formsy from 'formsy-react'
 
 import { MenuItem,
-         FormsySelect,
-         FormsyDate
+         RaisedButton } from 'material-ui'
+         
+import { FormsySelect,
+         FormsyDate,
        } from 'formsy-material-ui'
 
 
@@ -21,6 +23,7 @@ const exampleJSONData = {
 import { TextField } from 'material-ui/';
 
 class ReferralForm extends Component {
+
     render(){
         return(
             <App> 
@@ -40,13 +43,46 @@ class ReferralForm extends Component {
                           name="date"
                           required
                           floatingLabelText="Departure date"
+                          fullWidth={true}
                         />
 
                         <FormsyDate
                           name="date"
                           required
                           floatingLabelText="Arrival date"
+                          fullWidth={true}
                         />
+
+                        <FormsySelect
+                          name="currentLocation"
+                          required
+                          floatingLabelText="Current location"
+                          menuItems={this.selectFieldItems}
+                          fullWidth={true}
+                        >
+                          <MenuItem value={'Sydney'} primaryText="Sydney" />
+                          <MenuItem value={'Melbourne'} primaryText="Melbourne" />
+                      </FormsySelect>
+
+                        <FormsySelect
+                          name="destination"
+                          required
+                          floatingLabelText="Destination"
+                          menuItems={this.selectFieldItems}
+                          fullWidth={true}
+                        >
+                          <MenuItem value={'Sydney'} primaryText="Sydney" />
+                          <MenuItem value={'Melbourne'} primaryText="Melbourne" />
+                      </FormsySelect>
+
+                      <RaisedButton
+                        type="submit"
+                        label="Submit"
+                        disabled={true}
+                      />
+
+                    
+ 
                     </Formsy.Form>
 
 
